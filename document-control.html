@@ -1,0 +1,28 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Document Control System | Ogolo Chikadibia Glory</title><style>
+:root{--ink:#211d2b;--muted:#6f6871;--rose:#b66c78;--cream:#f8f4f0;--paper:#fffdfa;--line:#e8dfda;--plum:#49394b}
+*{box-sizing:border-box}body{margin:0;background:var(--cream);color:var(--ink);font:15px/1.6 Arial,sans-serif}
+.wrap{max-width:1080px;margin:auto;padding:28px 24px 70px}.back{color:var(--rose);text-decoration:none;font-size:12px;letter-spacing:.1em;text-transform:uppercase}
+h1{font:400 clamp(36px,5vw,58px)/1.05 Georgia,serif;margin:22px 0 8px}.sub{color:var(--muted);max-width:760px}.eyebrow{color:var(--rose);font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:bold}
+.panel{background:var(--paper);border:1px solid var(--line);padding:22px;margin-top:20px}.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:24px 0}.stat{background:white;border:1px solid var(--line);padding:18px}.stat strong{font:36px Georgia,serif;color:var(--rose);display:block}.stat span{font-size:12px;color:var(--muted)}
+table{border-collapse:collapse;width:100%;font-size:13px;background:white}th{background:var(--ink);color:white;text-align:left;font-weight:normal;padding:12px}td{padding:12px;border-bottom:1px solid var(--line);vertical-align:top}
+input,select{padding:11px;border:1px solid #d9cdd0;background:white;font:inherit;max-width:100%}.controls{display:flex;gap:10px;flex-wrap:wrap;margin:12px 0 18px}
+.pill{display:inline-block;border-radius:99px;padding:3px 9px;background:#f0e7e4;font-size:11px}.bar{height:8px;background:#eee5e2;border-radius:10px;overflow:hidden;min-width:85px}.bar i{display:block;height:100%;background:var(--rose)}
+.note{font-size:12px;color:var(--muted);margin-top:14px}.button{display:inline-block;background:var(--ink);color:white;text-decoration:none;padding:11px 15px;font-size:12px;letter-spacing:.08em;text-transform:uppercase;margin:8px 8px 0 0}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}.step{border-left:3px solid var(--rose);padding:5px 0 5px 15px;margin:14px 0}.step h3{font:22px Georgia,serif;margin:0 0 5px}
+@media(max-width:700px){.stats{grid-template-columns:repeat(2,1fr)}.grid2{grid-template-columns:1fr}.tablewrap{overflow-x:auto}}
+</style></head><body><main class="wrap"><a class="back" href="../index.html">← Back to portfolio</a><div class="eyebrow" style="margin-top:28px">02 · Records management</div><h1>Document Control System</h1><p class="sub">A searchable sample register designed to make records easier to identify, locate, review and protect.</p>
+<div class="stats"><div class="stat"><strong>4</strong><span>Sample records</span></div><div class="stat"><strong>3</strong><span>Access categories</span></div><div class="stat"><strong>1</strong><span>Review due</span></div><div class="stat"><strong>1</strong><span>Restricted file</span></div></div>
+<div class="panel"><div class="eyebrow">Searchable document register</div><div class="controls"><input id="q" placeholder="Search name, category, owner…"><select id="access"><option value="all">All access levels</option><option>Internal</option><option>Restricted</option></select></div>
+<div class="tablewrap"><table id="docs"><thead><tr><th>ID</th><th>Document</th><th>Category</th><th>Owner</th><th>Version</th><th>Access</th><th>Folder location</th><th>Status</th></tr></thead><tbody>
+<tr><td>DOC-001</td><td>Leadership meeting agenda</td><td>Governance</td><td>Executive Office</td><td>1.0</td><td>Internal</td><td>01_Leadership / Meetings</td><td>Current</td></tr>
+<tr><td>DOC-002</td><td>Client onboarding checklist</td><td>Operations</td><td>Operations</td><td>1.2</td><td>Internal</td><td>02_Operations / Client Onboarding</td><td>Review due</td></tr>
+<tr><td>DOC-003</td><td>Supplier agreement</td><td>Legal & Procurement</td><td>Procurement</td><td>2.0</td><td>Restricted</td><td>03_Contracts / Suppliers</td><td>Current</td></tr>
+<tr><td>DOC-004</td><td>Project status report</td><td>Projects</td><td>Project Lead</td><td>1.0</td><td>Internal</td><td>04_Projects / Active Project</td><td>Current</td></tr>
+</tbody></table></div></div>
+<div class="grid2"><div class="panel"><div class="eyebrow">Naming convention</div><h2 style="font:25px Georgia">YYYY-MM-DD_DocumentName_Version</h2><p>Consistent file naming helps users recognise the document, date and version before opening it.</p></div><div class="panel"><div class="eyebrow">Suggested folder logic</div><p><b>01 Leadership</b> → meetings and decisions</p><p><b>02 Operations</b> → SOPs and templates</p><p><b>03 Contracts</b> → supplier and client records</p><p><b>04 Projects</b> → active project files</p><p><b>05 Archive</b> → inactive records by year</p></div></div>
+<a class="button" href="Document_Control_Register.xlsx" download>Download editable Excel version</a>
+<script>
+const q=document.getElementById('q'),a=document.getElementById('access');
+function f(){for(const r of document.querySelectorAll('#docs tbody tr')){const t=r.innerText.toLowerCase();r.style.display=t.includes(q.value.toLowerCase())&&(a.value==='all'||t.includes(a.value.toLowerCase()))?'':'none';}}
+q.addEventListener('input',f);a.addEventListener('change',f);
+</script><p class="note">Independent portfolio demonstration · Illustrative sample data · No former-employer or client records are used.</p></main></body></html>
